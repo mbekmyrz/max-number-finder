@@ -1,0 +1,66 @@
+(DELAYFILE
+(SDFVERSION "OVI 1.0")
+(DIVIDER /)
+(VOLTAGE 1.50:1.50:1.50)
+(PROCESS)
+(TEMPERATURE 25.00:25.00:25.00)
+(TIMESCALE 1ns)
+
+  (CELL
+    (CELLTYPE  "NOR")
+    (INSTANCE  *)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH a y  (2:2:2)(2:2:2))
+        (IOPATH b y  (2:2:2)(2:2:2))
+      )
+    )
+  )
+
+  (CELL
+    (CELLTYPE  "NOT")
+    (INSTANCE  *)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH in out  (1:1:1)(1:1:1))
+      )
+    )
+  )
+
+  (CELL
+    (CELLTYPE  "BUF")
+    (INSTANCE  *)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH in out  (0.1:0.1:0.1)(0.1:0.1:0.1))
+      )
+    )
+  )
+
+  (CELL
+    (CELLTYPE  "NAND")
+    (INSTANCE  *)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH a y  (3:3:3)(3:3:3))
+        (IOPATH b y  (3:3:3)(3:3:3))
+      )
+    )
+  )
+
+  (CELL
+    (CELLTYPE  "DFFSR")
+    (INSTANCE  *)
+    (DELAY
+      (ABSOLUTE
+        (IOPATH (posedge CLK) Q  (2:2:2)(2:2:2))
+        (IOPATH (posedge SETZ) Q  (2:2:2)(2:2:2))
+        (IOPATH (posedge RESETZ) Q  (2:2:2)(2:2:2))
+      )
+    )
+    (TIMINGCHECK
+      (SETUPHOLD D (posedge CLK) (1:1:1)(0.5:0.5:0.5))
+    )
+  )
+
+)

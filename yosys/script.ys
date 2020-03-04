@@ -1,0 +1,7 @@
+read_verilog max.v
+proc;; memory;; techmap;;
+dfflibmap -liberty cells.lib
+abc -liberty cells.lib;;
+opt
+clean
+write_verilog -noattr -renameprefix syn synth.v

@@ -1,0 +1,11 @@
+# Clock routing command line
+START-PATH
+SOURCE NODE=BUF PORT=out
+DESTINATION NODE=DFFSR PORT=CLK
+LAYERS HORIZONTAL=5 VERTICAL=6
+CHANNEL NAME=a IN=up OUT=down syn_305_ syn_304_
+CHANNEL NAME=b IN=down OUT=up syn_306_ syn_301_ syn_303_ syn_302_
+CHANNEL NAME=c IN=left OUT=right syn_299_ syn_297_ syn_300_ syn_298_
+CHANNEL NAME=d IN=right OUT=left syn_307_ syn_308_ syn_309_ syn_310_
+CHANNEL NAME=whole IN=down OUT=up d b c a
+END-PATH
